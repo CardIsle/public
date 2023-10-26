@@ -1,0 +1,16 @@
+<html>
+  <h1>test</h1>
+  <img src="https://www.cardisle.com/api/image/download/?file=81c060968bcf406d94637c27c5c14473.jpg&pickup_code=c32hy"/>
+  <script>
+    function getParameterByName(name, url) {
+  if (!url) url = window.location.href;
+  name = name.replace(/[\[\]]/g, "\\$&");
+  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+  results = regex.exec(url);
+  if (!results) return null;
+  if (!results[2]) return '';
+  return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+document.querySelector("img").style.border = getParameterByName("border");
+  </script>
+</html>
